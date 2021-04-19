@@ -1,0 +1,21 @@
+
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: ROOT
+    url: jdbc:mysql://localhost:3306/kaohe?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+          stat-view-servlet:
+            enabled: true
+            login-username: admin
+            login-password: admin
+          filters: stat,wall
+#    mybatis:
+#      mapper-locations: classpath:mapper/*.xml
+#      configuration:
+#        map-underscore-to-camel-case: true
+#        type-aliases-package: 'top.fengziren.bean.sql'
