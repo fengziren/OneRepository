@@ -9,9 +9,10 @@
             <id column="m_id" property="mId"></id>
             <result column="title" property="title"/>
             <result column="content" property="content"/>
-            <result column="status" property="status"/>
+            <result column="sum" property="sum"/>
             <result column="m_time" property="mTime"/>
             <result column="user_name" property="fName"/>
+            <result column="count" property="count"/>
     </resultMap>
     <resultMap id="messageByUidAndMid" type="top.fengziren.modol.Message">
         <result column="title" property="title"/>
@@ -36,27 +37,30 @@
     </insert>
 
     <select id="getMessageByMessageSelect" parameterType="top.fengziren.modol.MessageSelect" resultMap="messageList">
-        SELECT
-          DISTINCT me.m_id,me.title,me.content,me.m_time,ms.status,us.user_name
-          FROM
-          user as us JOIN msg as ms
-          ON us.u_id = ms.f_id
-          JOIN message as me
-          ON ms.m_id = me.m_id
-          WHERE
-          us.u_id = #{fId}
 
-          <if test="title != null and '' != title">
-            AND me.title = #{title}
-          </if>
-          <if test="status != null">
-            AND ms.status = #{status}
-          </if>
-          <if test="startTime != null and endTime != null">
-              AND me.m_time between #{startTime} and #{endTime}
-          </if>
-            and ms.del_status = 0
-            or ms.del_status = 2
+
+        SELECT  temp.m_id,temp.title,temp.content,temp.m_time,temp.user_name,COUNT(temp.m_id) as `count`,SUM(temp.`status`) as `sum`
+        FROM
+        (SELECT
+        DISTINCT me.m_id,me.title,me.content,me.m_time,ms.status,us.user_name
+        FROM
+        user as us JOIN msg as ms
+        ON us.u_id = ms.f_id
+        JOIN message as me
+        ON ms.m_id = me.m_id
+        WHERE
+        us.u_id = #{fId}
+        <if test="title != null and '' != title">
+            AND me.title like #{title}
+        </if>
+
+        <if test="startTime != null and endTime != null">
+            AND me.m_time between #{startTime} and #{endTime}
+        </if>
+        and (ms.del_status = 0
+        or ms.del_status = 2)) temp
+        GROUP BY temp.m_id
+        ORDER BY temp.m_time DESC
     </select>
 
     <select id="getMessageByUidAndMid" resultMap="messageByUidAndMid">
