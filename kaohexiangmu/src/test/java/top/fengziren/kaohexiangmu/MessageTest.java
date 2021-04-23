@@ -53,7 +53,7 @@ public class MessageTest {
         MessageSelect messageSelect = new MessageSelect();
         messageSelect.setFId(Long.valueOf(1));
 //        messageSelect.setTitle("消息1");
-//        messageSelect.setStatus(0);
+        messageSelect.setStatus(0);
 //        messageSelect.setStartTime(getCustomDate("2021-04-20 10:30"));
 //        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
 

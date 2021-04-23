@@ -51,7 +51,7 @@
         WHERE
         us.u_id = #{fId}
         <if test="title != null and '' != title">
-            AND me.title like #{title}
+            AND me.title like concat('%',#{title},'%')
         </if>
 
         <if test="startTime != null and endTime != null">

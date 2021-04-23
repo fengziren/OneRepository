@@ -8,6 +8,7 @@ import top.fengziren.modol.MessageSelect;
 import top.fengziren.service.MessageService;
 import top.fengziren.service.MsgService;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -24,7 +25,42 @@ public class MessageServiceImpl implements MessageService{
 
     @Override
     public List<Message> getMessageByMessageSelect(MessageSelect messageSelect) {
-        return messageMapper.getMessageByMessageSelect(messageSelect);
+
+        List<Message> messageList = messageMapper.getMessageByMessageSelect(messageSelect);
+        Integer status = messageSelect.getStatus();
+
+        Iterator<Message> iterator = messageList.iterator();
+//        未读
+        if(0 == status) {
+            while (iterator.hasNext()) {
+                Message message = iterator.next();
+                if(message.getCount() > 1){
+                    iterator.remove();
+                }else if(message.getSum() > 0){
+                    iterator.remove();
+                }
+            }
+        }
+//        已读
+        if(1 == status) {
+            while (iterator.hasNext()) {
+                Message message = iterator.next();
+                if(message.getCount() > 1){
+                    iterator.remove();
+                }else if(0 == message.getSum()){
+                    iterator.remove();
+                }
+            }
+        }
+//        部分已读
+        if(2 == status) {
+            while (iterator.hasNext()) {
+                if( 1 == iterator.next().getCount()){
+                    iterator.remove();
+                }
+            }
+        }
+        return messageList;
     }
 
     @Override
