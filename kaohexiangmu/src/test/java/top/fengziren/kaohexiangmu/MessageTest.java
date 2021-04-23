@@ -53,7 +53,7 @@ public class MessageTest {
         MessageSelect messageSelect = new MessageSelect();
         messageSelect.setFId(Long.valueOf(1));
 //        messageSelect.setTitle("消息1");
-        messageSelect.setStatus(0);
+        messageSelect.setStatus(3);
 //        messageSelect.setStartTime(getCustomDate("2021-04-20 10:30"));
 //        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
 
@@ -87,9 +87,11 @@ public class MessageTest {
     * uId, List<mId>
     *
     * */
+    @Ignore
+    @Test
     public void  delMessages(){
         Long uId = Long.valueOf(1);
-        List<Long> mIdList = Arrays.asList(Long.valueOf(5),Long.valueOf(4),Long.valueOf(3),Long.valueOf(2));
+        List<Long> mIdList = Arrays.asList(Long.valueOf(30),Long.valueOf(29));
         String del = messageService.delMessages(uId,mIdList);
         System.out.println(del);
 

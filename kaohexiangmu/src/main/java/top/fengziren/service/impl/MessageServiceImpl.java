@@ -2,9 +2,11 @@ package top.fengziren.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import top.fengziren.mapper.MessageMapper;
 import top.fengziren.modol.Message;
 import top.fengziren.modol.MessageSelect;
+import top.fengziren.modol.Msg;
 import top.fengziren.service.MessageService;
 import top.fengziren.service.MsgService;
 
@@ -72,19 +74,18 @@ public class MessageServiceImpl implements MessageService{
 
         return message;
     }
-
+    @Transactional(rollbackFor = RuntimeException.class)
     @Override
     public String delMessages(Long uId, List<Long> mIdList) {
 
+        for (Long mId : mIdList) {
+            List<Msg> msgList = msgService.getMsgsByUidAndMid(uId, mId);
+            for (Msg msg : msgList) {
+                if (0 == msg.getDelStatus() || 2 == msg.getDelStatus()) {
+                    msgService.updateMsgDelstatus(msg);
+                }
+            }
 
-
-
-
-
-
-
-        if(1==1){
-            return "删除失败";
         }
         return "删除成功";
     }

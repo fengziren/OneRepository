@@ -2,6 +2,7 @@ package top.fengziren.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import top.fengziren.mapper.MsgMapper;
 import top.fengziren.modol.Message;
 import top.fengziren.modol.MessageSelect;
@@ -55,6 +56,17 @@ public class MsgServiceImpl implements MsgService{
         }
 
         return "发送成功";
+    }
+
+    @Override
+    @Transactional(rollbackFor = RuntimeException.class)
+    public List<Msg> getMsgsByUidAndMid(Long uId, Long mId) {
+        return msgMapper.getMsgsByUidAndMid(uId,mId);
+    }
+
+    @Override
+    public void updateMsgDelstatus(Msg msg) {
+        msgMapper.updateMsgDelstatus(msg);
     }
 
 

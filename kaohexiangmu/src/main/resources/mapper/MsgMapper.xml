@@ -3,7 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.fengziren.mapper.MsgMapper">
-
+    <resultMap id="msgMap" type="top.fengziren.modol.Msg">
+        <id column="msg_id" property="msgId"/>
+        <result column="f_id" property="fId"/>
+        <result column="s_id" property="sId"/>
+        <result column="m_id" property="mId"/>
+        <result column="del_status" property="delStatus"/>
+    </resultMap>
 
     <insert id="saveListMsg" >
         INSERT INTO msg
@@ -20,4 +26,24 @@
           (#{item.fId},#{item.sId},#{item.mId},#{item.status},#{item.delStatus})
       </foreach>
     </insert>
+
+    <select id="getMsgsByUidAndMid" resultMap="msgMap">
+        SELECT msg_id,f_id,s_id,m_id,del_status
+        FROM msg
+        WHERE
+        f_id = #{uId} and m_id = #{mId}
+    </select>
+
+    <update id="updateMsgDelstatus" parameterType="top.fengziren.modol.Msg">
+        UPDATE msg
+        <if test="delStatus == 0">
+            SET del_status = 1
+        </if>
+        <if test="delStatus == 2">
+            SET del_status = 3
+        </if>
+        WHERE
+        f_id =#{fId} and m_id = #{mId} and s_id = #{sId}
+
+    </update>
 </mapper>
