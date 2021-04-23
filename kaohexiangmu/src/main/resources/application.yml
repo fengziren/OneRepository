@@ -14,8 +14,10 @@ spring:
             login-username: admin
             login-password: admin
           filters: stat,wall
-#    mybatis:
-#      mapper-locations: classpath:mapper/*.xml
-#      configuration:
-#        map-underscore-to-camel-case: true
-#        type-aliases-package: 'top.fengziren.bean.sql'
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    top.fengziren.mapper : debug

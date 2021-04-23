@@ -1,8 +1,9 @@
 package top.fengziren;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+@MapperScan("top.fengziren.mapper")
 @SpringBootApplication
 public class KaohexiangmuApplication {
 
@@ -11,4 +12,3 @@ public class KaohexiangmuApplication {
 	}
 
 }
-//	An incompatible version [1.2.12] of the Apache Tomcat Native library is installed, while Tomcat requires version [1.2.14]
