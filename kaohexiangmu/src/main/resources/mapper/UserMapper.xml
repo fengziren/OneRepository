@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.fengziren.mapper.UserMapper">
+    <select id="getUserByUsernameAndPassword" resultType="top.fengziren.modol.User">
+        SELECT * FROM user WHERE user_name=#{username} and password=#{password}
+    </select>
+    <select id="getUsers" resultType="top.fengziren.modol.User">
+        SELECT * FROM user
+        <if test="name!=null">
+            WHERE name LIKE #{name}
+        </if>
+
+    </select>
+    <select id="getUsernameByUsername" resultType="java.lang.String">
+        SELECT user_name FROM user WHERE user_name = #{username}
+    </select>
+
+    <insert id="saveUser" parameterType="top.fengziren.modol.User">
+        INSERT INTO user
+        (
+        user_name,
+        `name`,
+        password,
+        tel,
+        create_time,
+        `describe`
+        )
+        VALUES (
+        #{userName},
+        #{name},
+        #{passWord},
+        #{tel},
+        #{createTime},
+        #{describe}
+        )
+    </insert>
+</mapper>

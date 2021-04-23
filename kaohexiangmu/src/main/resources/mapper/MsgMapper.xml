@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.fengziren.mapper.MsgMapper">
+
+
+    <insert id="saveListMsg" >
+        INSERT INTO msg
+        (
+        f_id,
+        s_id,
+        m_id,
+        status,
+        del_status
+        )
+        VALUES
+      <foreach item="item" index="index" collection="list"
+               separator="," >
+          (#{item.fId},#{item.sId},#{item.mId},#{item.status},#{item.delStatus})
+      </foreach>
+    </insert>
+</mapper>

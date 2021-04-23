@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.fengziren.mapper.MessageMapper">
+
+    <resultMap id="messageList" type="top.fengziren.modol.Message">
+
+            <id column="m_id" property="mId"></id>
+            <result column="title" property="title"/>
+            <result column="content" property="content"/>
+            <result column="status" property="status"/>
+            <result column="m_time" property="mTime"/>
+            <result column="user_name" property="fName"/>
+    </resultMap>
+    <resultMap id="messageByUidAndMid" type="top.fengziren.modol.Message">
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="m_time" property="mTime"/>
+        <result column="user_name" property="fName"/>
+        <result column="susername" property="sUserName"/>
+    </resultMap>
+
+    <insert id="saveMessage" parameterType="top.fengziren.modol.Message" useGeneratedKeys="true" keyProperty="mId">
+        INSERT INTO message
+        (
+        title,
+        content,
+        m_time
+        )
+        VALUES (
+        #{title},
+        #{content},
+        #{mTime}
+        )
+    </insert>
+
+    <select id="getMessageByMessageSelect" parameterType="top.fengziren.modol.MessageSelect" resultMap="messageList">
+        SELECT
+          DISTINCT me.m_id,me.title,me.content,me.m_time,ms.status,us.user_name
+          FROM
+          user as us JOIN msg as ms
+          ON us.u_id = ms.f_id
+          JOIN message as me
+          ON ms.m_id = me.m_id
+          WHERE
+          us.u_id = #{fId}
+
+          <if test="title != null and '' != title">
+            AND me.title = #{title}
+          </if>
+          <if test="status != null">
+            AND ms.status = #{status}
+          </if>
+          <if test="startTime != null and endTime != null">
+              AND me.m_time between #{startTime} and #{endTime}
+          </if>
+            and ms.del_status = 0
+            or ms.del_status = 2
+    </select>
+
+    <select id="getMessageByUidAndMid" resultMap="messageByUidAndMid">
+
+    SELECT temp.title,temp.content,temp.m_time,temp.user_name,GROUP_CONCAT(user.user_name) as susername FROM
+        (SELECT me.title,me.content,me.m_time,us.user_name,ms.s_id
+        from user as us join msg as ms
+        on us.u_id = ms.f_id
+        join message me
+        on ms.m_id = me.m_id
+        where us.u_id = #{uId} and me.m_id = #{mId}) temp
+        JOIN user on temp.s_id = user.u_id
+        GROUP BY temp.title,temp.content,temp.m_time,temp.user_name
+
+    </select>
+
+
+
+</mapper>
+<!--AND #{endTime} > me.m_time and me.m_time > #{startTime}-->
