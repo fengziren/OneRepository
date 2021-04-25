@@ -13,4 +13,8 @@ public interface MsgService {
     List<Msg> getMsgsByUidAndMid(Long uId, Long mId);
 
     void updateMsgDelstatus(Msg msg);
+
+    void updateMsgStatusById(Long msgId);
+
+    void updateMsgDelstatusBySid(Long sId, Long mId);
 }

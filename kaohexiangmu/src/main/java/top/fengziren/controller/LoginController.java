@@ -30,10 +30,10 @@ public class LoginController {
                            HttpSession session){
         User user = userService.getUserByUsernameAndPassword(userName,passWord);
         if(null != user) {
+            session.setAttribute("user",user);
             System.out.println(user.getUserName() + "****" + user.getPassWord());
-            return "/main/main";
+            return "redirect:/main";
         }
-        session.setAttribute("msg","账号密码错误！！！");
         return "redirect:/";
     }
     @RequestMapping("/login/register")
@@ -55,6 +55,11 @@ public class LoginController {
         }else {
             return "/register";
         }
+    }
+
+    @RequestMapping("/main")
+    public String jumpMian(){
+        return "/main/main";
     }
 
 }

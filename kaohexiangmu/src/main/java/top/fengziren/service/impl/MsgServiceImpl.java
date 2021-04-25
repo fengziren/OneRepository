@@ -69,5 +69,14 @@ public class MsgServiceImpl implements MsgService{
         msgMapper.updateMsgDelstatus(msg);
     }
 
+    @Override
+    public void updateMsgStatusById(Long msgId) {
+        msgMapper.updateMsgStatusById(msgId);
+    }
 
+    @Override
+    public void updateMsgDelstatusBySid(Long sId, Long mId) {
+        msgMapper.updateMsgDelstatusBySid(sId,mId);
+
+    }
 }

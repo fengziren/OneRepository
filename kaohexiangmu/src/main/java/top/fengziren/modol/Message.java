@@ -21,6 +21,7 @@ public class Message {
     private Date mTime;
 
     //非表属性
+    private Long msgId;
     private Integer status;
     private String fName;
     private String sUserName;

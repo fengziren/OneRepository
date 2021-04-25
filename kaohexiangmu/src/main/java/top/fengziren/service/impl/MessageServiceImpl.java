@@ -68,9 +68,6 @@ public class MessageServiceImpl implements MessageService{
     @Override
     public Message getMessageByUidAndMid(Long uId, Long mId) {
         Message message = messageMapper.getMessageByUidAndMid(uId,mId);
-        if(null != message){
-
-        }
 
         return message;
     }
@@ -86,6 +83,34 @@ public class MessageServiceImpl implements MessageService{
                 }
             }
 
+        }
+        return "删除成功";
+    }
+
+    @Override
+    public List<Message> getMessageByMessageSelectShou(MessageSelect messageSelect) {
+        List<Message> messageList = messageMapper.getMessageByMessageSelectShou(messageSelect);
+        Integer status = messageSelect.getStatus();
+
+        Iterator<Message> iterator = messageList.iterator();
+
+        return messageList;
+
+    }
+
+    @Override
+    public Message getMessageBySidAndMidShou(Long sId, Long mId) {
+        Message message = messageMapper.getMessageBySidAndMidShou(sId,mId);
+        if(null != message && 0 == message.getStatus()){
+            msgService.updateMsgStatusById(message.getMsgId());
+        }
+        return message;
+    }
+    @Transactional(rollbackFor = RuntimeException.class)
+    @Override
+    public String delMessageShou(Long sId, List<Long> mIdList) {
+        for (Long mId : mIdList) {
+           msgService.updateMsgDelstatusBySid(sId , mId);
         }
         return "删除成功";
     }

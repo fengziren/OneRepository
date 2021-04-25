@@ -14,4 +14,7 @@ public interface MessageMapper {
     Message getMessageByUidAndMid(@Param("uId") Long uId, @Param("mId") Long mId);
 
 
+    List<Message> getMessageByMessageSelectShou(MessageSelect messageSelect);
+
+    Message getMessageBySidAndMidShou(@Param("sId") Long sId, @Param("mId") Long mId);
 }

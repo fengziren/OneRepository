@@ -46,4 +46,16 @@
         f_id =#{fId} and m_id = #{mId} and s_id = #{sId}
 
     </update>
+    <update id="updateMsgStatusById">
+        UPDATE msg
+        SET status = 1
+        WHERE msg_id = #{msgId}
+    </update>
+    <update id="updateMsgDelstatusBySid" >
+        update msg
+        set del_status =
+       (SELECT if(del_status = 0,2,3) as  msg WHERE s_id = #{sId} and  m_id = #{mId})
+        WHERE s_id = #{sId} AND m_id = #{mId}
+
+    </update>
 </mapper>

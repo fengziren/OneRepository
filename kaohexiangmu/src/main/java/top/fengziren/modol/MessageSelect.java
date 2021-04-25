@@ -12,6 +12,7 @@ import java.util.Date;
 @ToString
 public class MessageSelect {
     private Long fId;
+    private Long sId;
     private String title;
     private Integer status;
     private Date startTime;

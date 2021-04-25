@@ -13,4 +13,10 @@ public interface MessageService {
     Message getMessageByUidAndMid(Long uId, Long mId);
 
     String delMessages(Long uId, List<Long> mIdList);
+
+    List<Message> getMessageByMessageSelectShou(MessageSelect messageSelect);
+
+    Message getMessageBySidAndMidShou(Long sId, Long mId);
+
+    String delMessageShou(Long sId, List<Long> mIdList);
 }
