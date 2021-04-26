@@ -1,5 +1,6 @@
 package top.fengziren.kaohexiangmu;
 
+import com.github.pagehelper.PageInfo;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,8 +58,7 @@ public class MessageTest {
 //        messageSelect.setStartTime(getCustomDate("2021-04-20 10:30"));
 //        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
 
-        List<Message> messageList = messageService.getMessageByMessageSelect(messageSelect);
-        messageList.forEach(System.out::println);
+        PageInfo<Message> messageList = messageService.getMessageByMessageSelect(messageSelect);
 
 
 

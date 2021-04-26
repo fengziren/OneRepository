@@ -15,6 +15,6 @@ public class MessageSelect {
     private Long sId;
     private String title;
     private Integer status;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
 }

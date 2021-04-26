@@ -8,8 +8,8 @@
     </select>
     <select id="getUsers" resultType="top.fengziren.modol.User">
         SELECT * FROM user
-        <if test="name!=null">
-            WHERE name LIKE #{name}
+        <if test="name!=null and name!=''">
+            WHERE name LIKE concat('%',#{name},'%')
         </if>
 
     </select>

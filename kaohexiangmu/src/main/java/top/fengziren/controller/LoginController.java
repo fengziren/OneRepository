@@ -34,6 +34,7 @@ public class LoginController {
             System.out.println(user.getUserName() + "****" + user.getPassWord());
             return "redirect:/main";
         }
+        session.setAttribute("msg","账号或密码错误！！！");
         return "redirect:/";
     }
     @RequestMapping("/login/register")
@@ -57,9 +58,5 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/main")
-    public String jumpMian(){
-        return "/main/main";
-    }
 
 }

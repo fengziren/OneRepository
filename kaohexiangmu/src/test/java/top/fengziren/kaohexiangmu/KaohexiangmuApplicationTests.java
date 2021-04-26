@@ -19,13 +19,6 @@ class KaohexiangmuApplicationTests {
 	UserService userService;
 	@Test
 	public void selectUsers(){
-		String name = "";
-		List<User> users = userService.getUsers(name);
-		for (User user : users){
-
-			user.getCreateTime();
-		}
-
 
 	}
 

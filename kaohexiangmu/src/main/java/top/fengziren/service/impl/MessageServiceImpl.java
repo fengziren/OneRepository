@@ -1,5 +1,7 @@
 package top.fengziren.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,14 +28,20 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public List<Message> getMessageByMessageSelect(MessageSelect messageSelect) {
+    public PageInfo<Message> getMessageByMessageSelect(MessageSelect messageSelect) {
 
+        if(null == messageSelect.getStartTime() || "null".equals(messageSelect.getStartTime()) || "".equals(messageSelect.getStartTime())){
+            messageSelect.setStartTime(null);
+            messageSelect.setEndTime(null);
+        }
+
+        PageHelper.startPage(1,5);
         List<Message> messageList = messageMapper.getMessageByMessageSelect(messageSelect);
         Integer status = messageSelect.getStatus();
 
         Iterator<Message> iterator = messageList.iterator();
 //        未读
-        if(0 == status) {
+        if(null != status && 0 == status) {
             while (iterator.hasNext()) {
                 Message message = iterator.next();
                 if(message.getCount() > 1){
@@ -44,7 +52,7 @@ public class MessageServiceImpl implements MessageService{
             }
         }
 //        已读
-        if(1 == status) {
+        if(null != status &&1 == status) {
             while (iterator.hasNext()) {
                 Message message = iterator.next();
                 if(message.getCount() > 1){
@@ -55,14 +63,14 @@ public class MessageServiceImpl implements MessageService{
             }
         }
 //        部分已读
-        if(2 == status) {
+        if(null != status &&2 == status) {
             while (iterator.hasNext()) {
                 if( 1 == iterator.next().getCount()){
                     iterator.remove();
                 }
             }
         }
-        return messageList;
+        return new PageInfo<>(messageList);
     }
 
     @Override

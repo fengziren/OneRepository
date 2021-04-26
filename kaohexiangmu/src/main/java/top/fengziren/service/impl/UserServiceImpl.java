@@ -1,5 +1,7 @@
 package top.fengziren.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.fengziren.mapper.UserMapper;
@@ -18,13 +20,14 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<User> getUsers(String name) {
-        if(null != name && !("".equals(name))){
-            name = '%'+name+'%';
-        }else {
-            name = null;
-        }
-        return userMapper.getUsers(name);
+    public PageInfo<User> getUsers(String name,int pageNum, int pageSize) {
+
+            PageHelper.startPage(pageNum,pageSize);
+            List<User> users = userMapper.getUsers(name);
+
+
+
+        return new PageInfo<User>(users);
     }
 
     @Override

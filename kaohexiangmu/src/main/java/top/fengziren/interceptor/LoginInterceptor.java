@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor{
         if(null != user){
             return true;
         }
-        session.setAttribute("msg","账号或密码错误！！！");
+        session.setAttribute("msg","请先登录！！！");
         response.sendRedirect("/");
         return false;
     }
