@@ -22,14 +22,13 @@ public class Message {
 
     //非表属性
     private Long msgId;
-    private Integer status;
     private String fName;
     private String sUserName;
-
-//    去重后的条数1表示未读或已读；大于1表示部分已读
+    private String status;
+/*//    去重后的条数1表示未读或已读；大于1表示部分已读
     private Integer count;
 //    status的和；count=1--->sum=0表示未读；sum>0表示已读；
 //    status的和；count>1--->忽略sum；
-    private Integer sum;
+    private Integer sum;*/
 
 }

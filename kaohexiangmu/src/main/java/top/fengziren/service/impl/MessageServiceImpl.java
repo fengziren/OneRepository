@@ -28,48 +28,15 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public PageInfo<Message> getMessageByMessageSelect(MessageSelect messageSelect) {
+    public PageInfo<Message> getMessageByMessageSelect(int pageNum,int pageSize,MessageSelect messageSelect) {
 
         if(null == messageSelect.getStartTime() || "null".equals(messageSelect.getStartTime()) || "".equals(messageSelect.getStartTime())){
             messageSelect.setStartTime(null);
             messageSelect.setEndTime(null);
         }
 
-        PageHelper.startPage(1,5);
+        PageHelper.startPage(pageNum,pageSize);
         List<Message> messageList = messageMapper.getMessageByMessageSelect(messageSelect);
-        Integer status = messageSelect.getStatus();
-
-        Iterator<Message> iterator = messageList.iterator();
-//        未读
-        if(null != status && 0 == status) {
-            while (iterator.hasNext()) {
-                Message message = iterator.next();
-                if(message.getCount() > 1){
-                    iterator.remove();
-                }else if(message.getSum() > 0){
-                    iterator.remove();
-                }
-            }
-        }
-//        已读
-        if(null != status &&1 == status) {
-            while (iterator.hasNext()) {
-                Message message = iterator.next();
-                if(message.getCount() > 1){
-                    iterator.remove();
-                }else if(0 == message.getSum()){
-                    iterator.remove();
-                }
-            }
-        }
-//        部分已读
-        if(null != status &&2 == status) {
-            while (iterator.hasNext()) {
-                if( 1 == iterator.next().getCount()){
-                    iterator.remove();
-                }
-            }
-        }
         return new PageInfo<>(messageList);
     }
 
@@ -109,9 +76,9 @@ public class MessageServiceImpl implements MessageService{
     @Override
     public Message getMessageBySidAndMidShou(Long sId, Long mId) {
         Message message = messageMapper.getMessageBySidAndMidShou(sId,mId);
-        if(null != message && 0 == message.getStatus()){
+//        if(null != message && 0 == message.getStatus()){
             msgService.updateMsgStatusById(message.getMsgId());
-        }
+//        }
         return message;
     }
     @Transactional(rollbackFor = RuntimeException.class)

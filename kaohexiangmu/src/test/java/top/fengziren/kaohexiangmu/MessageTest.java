@@ -56,9 +56,9 @@ public class MessageTest {
 //        messageSelect.setTitle("消息1");
         messageSelect.setStatus(3);
 //        messageSelect.setStartTime(getCustomDate("2021-04-20 10:30"));
-//        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
-
-        PageInfo<Message> messageList = messageService.getMessageByMessageSelect(messageSelect);
+////        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
+//
+//        PageInfo<Message> messageList = messageService.getMessageByMessageSelect(messageSelect);
 
 
 
@@ -72,11 +72,11 @@ public class MessageTest {
     @Ignore
     @Test
     public void  selectMessageParticulars(){
-        Long uId = Long.valueOf(1);
-        Long mId = Long.valueOf(22);
-        Message message = messageService.getMessageByUidAndMid(uId,mId);
-        System.out.println(message);
-
+//        Long uId = Long.valueOf(1);
+//        Long mId = Long.valueOf(22);
+//        Message message = messageService.getMessageByUidAndMid(uId,mId);
+//        System.out.println(message);
+//
 
 
     }

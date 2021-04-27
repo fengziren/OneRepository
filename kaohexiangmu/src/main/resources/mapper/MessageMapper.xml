@@ -11,11 +11,8 @@
     </resultMap>
 
     <resultMap id="messageList" type="top.fengziren.modol.Message" extends="publicMessage">
-
-
-            <result column="sum" property="sum"/>
             <result column="user_name" property="fName"/>
-            <result column="count" property="count"/>
+            <result column="status" property="status"/>
     </resultMap>
     <resultMap id="messageByUidAndMid" type="top.fengziren.modol.Message" extends="publicMessage">
 
@@ -47,30 +44,70 @@
     </insert>
 
     <select id="getMessageByMessageSelect" parameterType="top.fengziren.modol.MessageSelect" resultMap="messageList">
-
-
-        SELECT  temp.m_id,temp.title,temp.content,temp.m_time,temp.user_name,COUNT(temp.m_id) as `count`,SUM(temp.`status`) as `sum`
+        SELECT DISTINCT
+        me.m_id,
+        me.title,
+        me.content,
+        me.m_time,
+        us.user_name,
+        mid.`status`
         FROM
-        (SELECT
-        DISTINCT me.m_id,me.title,me.content,me.m_time,ms.status,us.user_name
+        USER AS us
+        JOIN msg AS ms ON us.u_id = ms.f_id
+        JOIN message AS me ON ms.m_id = me.m_id
+        JOIN (
+        SELECT
+        T.m_id,
+        (
+        CASE
+
+        WHEN T.`count` = T.`sum` THEN
+        '已读'
+        WHEN T.`count` > T.`sum`
+        AND T.`sum` = 0 THEN
+        '未读'
+        WHEN T.`count` > T.`sum`
+        AND T.`sum` > 0 THEN
+        '部分已读'
+        END
+        ) AS `status`
         FROM
-        user as us JOIN msg as ms
-        ON us.u_id = ms.f_id
-        JOIN message as me
-        ON ms.m_id = me.m_id
+        (
+        SELECT
+        me.m_id,
+        count( me.m_id ) AS `count`,
+        sum( ms.`status` ) AS `sum`
+        FROM
+        USER AS us
+        JOIN msg AS ms ON us.u_id = ms.f_id
+        JOIN message AS me ON ms.m_id = me.m_id
+        WHERE
+        us.u_id = 1
+        GROUP BY
+        me.m_id
+        ) T
+        ) mid ON me.m_id = mid.m_id
         WHERE
         us.u_id = #{fId}
+        AND ( ms.del_status = 0 OR ms.del_status = 2 )
         <if test="title != null and '' != title">
             AND me.title like concat('%',#{title},'%')
+        </if>
+        <if test="status != null and 0 == status">
+            AND mid.`status` = '未读'
+        </if>
+        <if test="status != null and 1 == status">
+            AND mid.`status` = '已读'
+        </if>
+        <if test="status != null and 2 == status">
+            AND mid.`status` = '部分已读'
         </if>
 
         <if test="startTime != null and endTime != null">
             AND me.m_time between #{startTime} and #{endTime}
         </if>
-        and (ms.del_status = 0
-        or ms.del_status = 2)) temp
-        GROUP BY temp.m_id
-        ORDER BY temp.m_time DESC
+        ORDER BY me.m_time DESC
+
     </select>
 
     <select id="getMessageByUidAndMid" resultMap="messageByUidAndMid">

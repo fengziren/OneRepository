@@ -9,7 +9,7 @@ import java.util.List;
 public interface MessageService {
     Long saveMessage(Message message);
 
-    PageInfo<Message> getMessageByMessageSelect(MessageSelect messageSelect);
+    PageInfo<Message> getMessageByMessageSelect(int pageNum,int  pageSize,MessageSelect messageSelect);
 
     Message getMessageByUidAndMid(Long uId, Long mId);
 
