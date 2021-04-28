@@ -22,6 +22,7 @@ public class UserController {
 
 
         PageInfo<User> pageInfo = userService.getUsers(name,pageNum,pageSize);
+
         model.addAttribute("pageInfo",pageInfo);
         if(name != null && ""!=name){
             model.addAttribute("arg",name);

@@ -13,4 +13,6 @@ public interface UserService {
     String getUsernameByUsername(String username);
 
     Long saveUser(User user);
+
+    List<User> getUserEXid(Long uId);
 }

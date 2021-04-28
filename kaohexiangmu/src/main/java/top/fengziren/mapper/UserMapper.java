@@ -13,4 +13,6 @@ public interface UserMapper {
     String getUsernameByUsername(String username);
 
     Long saveUser(User user);
+
+    List<User> getUserEXid( @Param("uId") Long uId);
 }

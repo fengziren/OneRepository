@@ -36,4 +36,9 @@
         #{describe}
         )
     </insert>
+
+    <select id="getUserEXid" resultType="top.fengziren.modol.User">
+        SELECT * FROM user
+        WHERE u_id != #{uId}
+    </select>
 </mapper>

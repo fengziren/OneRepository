@@ -82,7 +82,7 @@
         JOIN msg AS ms ON us.u_id = ms.f_id
         JOIN message AS me ON ms.m_id = me.m_id
         WHERE
-        us.u_id = 1
+        us.u_id = #{fId}
         GROUP BY
         me.m_id
         ) T
