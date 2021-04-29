@@ -15,7 +15,7 @@ public interface MessageService {
 
     String delMessages(Long uId, List<Long> mIdList);
 
-    List<Message> getMessageByMessageSelectShou(MessageSelect messageSelect);
+    PageInfo<Message> getMessageByMessageSelectShou(int pageNum,int pageSize,MessageSelect messageSelect);
 
     Message getMessageBySidAndMidShou(Long sId, Long mId);
 

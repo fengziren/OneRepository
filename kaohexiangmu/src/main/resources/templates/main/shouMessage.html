@@ -7,43 +7,7 @@
 <body>
 
 
-<!-- Modal -->
-<div style=" opacity: 1;" class="modal fade"
-     id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">发送消息</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form th:method="POST" th:action="@{/main/famsg}">
-            <div class="modal-body">
-                <div>
-                    <label th:class="text-input-context-menu">标题：
-                        <input type="text" th:class="form-search" name="title">
-                    </label>
 
-                </div>
-                <div class="row">
-                    <ul id="userNames" style="float: left;list-style-type: none">
-
-                    </ul>
-                </div>
-                <div id="divCont">
-
-                </div>
-                <input type="text" style="display: none" name = "content" id="textmsg">
-            </div>
-            <div class="modal-footer">
-                <button type="reset" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                <button type="submit" class="btn btn-primary" id="famessage">发送</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
  <!--Modal2-->
 <div style=" opacity: 1;" class="modal fade"
      id="MessageParticulars" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,7 +31,7 @@
                     <div id="divCont2">
 
                     </div>
-                    <div id="selshouUser">收件人：</div>
+
 
                 </div>
                 <div class="modal-footer">
@@ -86,14 +50,13 @@
 
         <div class="col-6">
             <div>
-                <form  th:class="form-horizontal" th:action="@{/main/famsg}">
+                <form  th:class="form-horizontal" th:action="@{/main/shoumsg}">
                     <label th:class="text-input-context-menu">标题：
                         <input type="text" th:class="form-search" name="title">
                     </label>
                     <label th:class="text-input-context-menu">阅读状态
                         <select name="status">
                             <option th:value="3">全部</option>
-                            <option th:value="2">部分已读</option>
                             <option th:value="1">已读</option>
                             <option th:value="0">未读</option>
                         </select>
@@ -111,40 +74,36 @@
 
 
                 <table class="table table-striped">
-
+                    <form method="post" th:action="@{/main/shoumsg/delmsg}">
                     <thead>
                     <tr>
-                        <!-- Button trigger modal -->
-                        <button type="button" id="btnModal" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                            发送消息
-                        </button>
-                        <button type="button" id="delBtn" class="btn btn-secondary" onclick="return delMsgs()">
+
+                        <button type="submit" id="delBtn" class="btn btn-secondary" onclick="return delMsgs()">
                             批量删除
                         </button>
                     </tr>
                     <tr>
                         <th scope="col">
-                            <input id="overallCheck" type="checkbox" onclick="swapCheck()">
+                            <input type="checkbox" onclick="swapCheck()">
                         </th>
                         <th scope="col">标题</th>
                         <th scope="col">内容</th>
-                        <th scope="col">发件用户</th>
+                        <!--<th scope="col">发件用户</th>-->
                         <th scope="col">阅读状态</th>
                         <th scope="col">通知时间</th>
                         <th scope="col">操作</th>
                     </tr>
                     </thead>
-                    <form  id="delform" method="post" th:action="@{/main/famsg/delmsg}">
                     <tbody>
                     <tr th:each="message , messageStat:${pageInfo.getList()}">
-                        <th><input  type="checkbox" name="midList" th:value="${message.mId}"></th>
+                        <th><input type="checkbox" name="midList" th:value="${message.mId}"></th>
                         <th th:text="${message.title}"></th>
                         <td th:text="${#strings.abbreviate(message.content,10)}"></td>
-                        <td th:text="${message.fName}"></td>
+                        <!--<td th:text="${message.fName}"></td>-->
                         <td th:text="${message.status}"></td>
                         <td th:text="${#dates.format(message.mTime,'yyyy-MM-dd HH:mm')}"></td>
                         <td >
-                            <button th:onclick="'javascript: selmsg('+${message.mId}+')'"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#MessageParticulars">查看</button>
+                            <button th:onclick="'javascript: shoumsg('+${message.mId}+')'"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#MessageParticulars">查看</button>
                             <button type="submit" class="btn btn-danger">删除</button>
                         </td>
                     </tr>
@@ -155,7 +114,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item">
-                        <a class="page-link" aria-label="Previous" th:href="@{/main/famsg(pageNum=1,title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" >
+                        <a class="page-link" aria-label="Previous" th:href="@{/main/shoumsg(pageNum=1,title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" >
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
@@ -164,7 +123,7 @@
                         <a th:href="@{/main/famsg(pageNum=${pageNum},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" th:text="${pageNum}" th:if="${pageNum eq pageInfo.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" aria-label="Next" th:href="@{/main/famsg(pageNum=${pageInfo.getPages()},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}">
+                        <a class="page-link" aria-label="Next" th:href="@{/main/shoumsg(pageNum=${pageInfo.getPages()},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
@@ -186,14 +145,7 @@
 
 <script type="text/javascript">
     const E = window.wangEditor
-    const editor1 = new E('#divCont')
-    // 或者 const editor = new E( document.getElementById('div1') )
-    editor1.config.menus = ['image']
-    //富文本编辑器图片上传配置
-    // editor.config.uploadImgServer = '/upload-img'
-    // editor.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
-    // editor.config.uploadImgMaxLength = 3
-    editor1.create();
+
 
     const editor2 = new E('#divCont2')
     // 或者 const editor = new E( document.getElementById('div1') )
@@ -202,33 +154,11 @@
     // editor2.txt.html('<p>用 JS 设置的内容</p>')   重新设置编辑器内容
     editor2.disable();
 
-    $('#famessage').click(function () {
-        var datatxt = editor1.txt.text();
-        $('#textmsg').val(datatxt);
-    })
 
-    $('#btnModal').click(function () {
-        $.ajax({
-            type:'POST',
-            url:'/main/famsg/users',
-            data:{},
-            success:function (arg) {
-                var dataArg = arg ;
-
-                con = "";
-                $.each(dataArg,function (index,item) {
-                    con += "<li style='float: left'><input type='checkbox' name='sidList'"+" value="+"'"+item.uid+"'"+">"+item.userName+"</li>"
-                })
-                $("#userNames").html(con);
-            }
-        })
-    })
-
-
-    function selmsg(mid) {
+    function shoumsg(mid) {
         $.ajax({
             type:"POST",
-            url:"/main/famsg/selParticulars",
+            url:"/main/shoumsg/selParticulars",
             data:{mId:mid},
             success:function (result) {
                 // console.log(result)
@@ -237,10 +167,12 @@
                 var dateTime = new Date(result.mtime);
                 $("#mTime").text("通知时间："+dateTime.toLocaleDateString()+dateTime.toLocaleTimeString());
                 editor2.txt.text('<p>'+result.content+'</p>')
-                $("#selshouUser").text("收件人："+result.suserName)
             }
         })
     }
+    $('#MessageParticulars').on('hidden.bs.modal', function (event) {
+        window.location.reload();
+    })
     //checkbox 全选/取消全选
     var isCheckAll = false;
     function swapCheck() {
@@ -258,18 +190,25 @@
     }
 
     function delMsgs() {
-        console.log($("[name='midList']:checked").length)
-
-       if($("[name='midList']:checked").length>0){
-           if(confirm("请确认是否删除！")){
-               $("#delform").submit();
-           }
-       }else{
-           alert("请选择需要删除的消息");
-       }
-
+        var count = 0;
+        var tag = 0;
+        $("input[type='checkbox']").each(function() {
+            if(this.checked == true){
+                count++;
+            }else {
+                count++;
+                tag++;
+            }
+        });
+        if(tag != 0 && count >= tag){
+            if(confirm("确定要删除吗？")==false){
+                return false;
+            }
+        }else {
+            alert("请选择要删除的消息");
+            return false;
+        }
     }
-
 </script>
 </body>
 </html>

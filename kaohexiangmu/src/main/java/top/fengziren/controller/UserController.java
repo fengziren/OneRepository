@@ -18,7 +18,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("")
-    public  String mianFun(String name, @RequestParam(value = "pageNum", defaultValue = "1") int pageNum, @RequestParam(value = "pageSize", defaultValue = "2") int pageSize, Model model){
+    public  String mianFun(String name, @RequestParam(value = "pageNum", defaultValue = "1") int pageNum, @RequestParam(value = "pageSize", defaultValue = "5") int pageSize, Model model){
 
 
         PageInfo<User> pageInfo = userService.getUsers(name,pageNum,pageSize);

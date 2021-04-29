@@ -124,7 +124,11 @@
 
     </select>
     <select id="getMessageByMessageSelectShou" resultMap="MessageByMessageSelectShou">
-        SELECT me.m_id,me.title,me.content,ms.`status`,me.m_time
+        SELECT me.m_id,
+        me.title,
+        me.content,
+        me.m_time,
+        (case ms.`status` when 1 THEN '已读' WHEN 0 THEN '未读' END) as `status`
         FROM msg ms join message me
         on ms.m_id = me.m_id
         WHERE

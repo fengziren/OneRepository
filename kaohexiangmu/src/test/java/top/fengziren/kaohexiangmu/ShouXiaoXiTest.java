@@ -39,10 +39,10 @@ public class ShouXiaoXiTest {
         messageSelect.setStatus(1);
 //        messageSelect.setStartTime(getCustomDate("2021-04-20 10:30"));
 //        messageSelect.setEndTime(getCustomDate("2021-04-21 14:30"));
-
-        List<Message> messageList = messageService.getMessageByMessageSelectShou(messageSelect);
-        messageList.forEach(System.out::println);
-
+//
+//        List<Message> messageList = messageService.getMessageByMessageSelectShou(messageSelect);
+//        messageList.forEach(System.out::println);
+//
 
 
     }

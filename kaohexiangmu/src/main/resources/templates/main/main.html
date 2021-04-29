@@ -48,9 +48,9 @@
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li class="page-item" th:each="pageNum:${#numbers.sequence(1,pageInfo.getPages())}">
-                            <a class="page-link" th:href="'/main?pageNum=' + ${pageNum}+'&name='+${arg!=null?arg:''}" th:text="${pageNum}"></a>
-
+                        <li class="page-item" th:if="${pageInfo.getPages()!=0}" th:each="pageNum:${#numbers.sequence(1,pageInfo.getPages())}">
+                            <a th:href="'/main?pageNum=' + ${pageNum}+'&name='+${arg!=null?arg:''}" th:text="${pageNum}" th:if="${pageNum ne pageInfo.getPageNum()}"></a>
+                            <a th:href="'/main?pageNum=' + ${pageNum}+'&name='+${arg!=null?arg:''}" th:text="${pageNum}" th:if="${pageNum eq pageInfo.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
                         </li>
                         <li class="page-item">
                             <a class="page-link" aria-label="Next" th:href="'/main?pageNum=' + ${pageInfo.getPages()}+ '&name='+${arg!=null?arg:''}">

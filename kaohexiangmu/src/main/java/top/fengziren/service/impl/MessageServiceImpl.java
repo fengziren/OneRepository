@@ -63,22 +63,24 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public List<Message> getMessageByMessageSelectShou(MessageSelect messageSelect) {
+    public PageInfo<Message> getMessageByMessageSelectShou(int pageNum,int pageSize,MessageSelect messageSelect) {
+        if(null == messageSelect.getStartTime() || "null".equals(messageSelect.getStartTime()) || "".equals(messageSelect.getStartTime())){
+            messageSelect.setStartTime(null);
+            messageSelect.setEndTime(null);
+        }
+        PageHelper.startPage(pageNum,pageSize);
         List<Message> messageList = messageMapper.getMessageByMessageSelectShou(messageSelect);
-        Integer status = messageSelect.getStatus();
-
-        Iterator<Message> iterator = messageList.iterator();
-
-        return messageList;
+        return new PageInfo<>(messageList);
 
     }
 
     @Override
+    @Transactional(rollbackFor = RuntimeException.class)
     public Message getMessageBySidAndMidShou(Long sId, Long mId) {
         Message message = messageMapper.getMessageBySidAndMidShou(sId,mId);
-//        if(null != message && 0 == message.getStatus()){
+        if(message.getStatus().equals("0")) {
             msgService.updateMsgStatusById(message.getMsgId());
-//        }
+        }
         return message;
     }
     @Transactional(rollbackFor = RuntimeException.class)

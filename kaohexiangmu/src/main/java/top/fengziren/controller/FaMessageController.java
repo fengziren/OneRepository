@@ -19,7 +19,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/main")
-public class faMessageController {
+public class FaMessageController {
     @Autowired
     MessageService messageService;
     @Autowired
@@ -30,7 +30,7 @@ public class faMessageController {
     @GetMapping("/famsg")
     public String faMain(
             @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,
-            @RequestParam(value = "pageSize", defaultValue = "3") int pageSize,
+            @RequestParam(value = "pageSize", defaultValue = "5") int pageSize,
             MessageSelect messageSelect, HttpSession session, Model model){
 
             User user = (User) session.getAttribute("user");
@@ -71,5 +71,13 @@ public class faMessageController {
         return message;
 
 
+    }
+    @RequestMapping("/famsg/delmsg")
+    public String delMessage(@RequestParam("midList") List<Long> midList,HttpSession session){
+        User user = (User) session.getAttribute("user");
+//        System.out.println(midList.toString());
+        String del = messageService.delMessages(user.getUId(),midList);
+        System.out.println(del);
+        return "redirect:/main/famsg";
     }
 }
