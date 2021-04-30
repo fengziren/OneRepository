@@ -51,4 +51,12 @@ public class ShouMessageController {
 
 
     }
+    @RequestMapping("/shoumsg/delmsgAjax")
+    @ResponseBody
+    public String delMessageAjax(@RequestParam("midList") List<Long> midList,HttpSession session){
+        User user = (User) session.getAttribute("user");
+        String del = messageService.delMessageShou(user.getUId(),midList);
+        System.out.println(del);
+        return del;
+    }
 }

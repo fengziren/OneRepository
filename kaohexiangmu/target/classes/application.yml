@@ -16,6 +16,9 @@ spring:
           filters: stat,wall
   thymeleaf:
     cache: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:

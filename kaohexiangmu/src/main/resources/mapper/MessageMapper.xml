@@ -103,8 +103,8 @@
             AND mid.`status` = '部分已读'
         </if>
 
-        <if test="startTime != null and endTime != null">
-            AND me.m_time between #{startTime} and #{endTime}
+        <if test="startDateTime != null and endDateTime != null">
+            AND me.m_time between #{startDateTime} and #{endDateTime}
         </if>
         ORDER BY me.m_time DESC
 
@@ -140,8 +140,8 @@
             AND me.title like concat('%',#{title},'%')
         </if>
 
-        <if test="startTime != null and endTime != null">
-            AND me.m_time between #{startTime} and #{endTime}
+        <if test="startDateTime != null and endDateTime != null">
+            AND me.m_time between #{startDateTime} and #{endDateTime}
         </if>
         and (ms.del_status = 0 or ms.del_status = 1)
 

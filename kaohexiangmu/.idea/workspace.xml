@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d25d81f-1780-44e9-87cb-772f7a276379" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/modol/EditorResult.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/faMessageController.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java" afterPath="$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/kaohe.sql" afterPath="$PROJECT_DIR$/src/main/resources/static/kaohe.sql" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/faMessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/faMessage.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/main.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/main.html" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/ShouXiaoXiTest.java" afterPath="$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/ShouXiaoXiTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,92 +42,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="faMessage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/faMessage.html">
+      <file leaf-file-name="FaMessageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="269" column="0" lean-forward="true" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1619691051214" expanded="true" signature="10053:10064" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShouMessageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" column="63" lean-forward="false" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" column="157" lean-forward="false" selection-start-line="20" selection-start-column="157" selection-end-line="20" selection-end-column="157" />
+            <state relative-caret-position="569">
+              <caret line="103" column="22" lean-forward="false" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/main.html">
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1377">
-              <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+            <state relative-caret-position="420">
+              <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/public/public.html">
+      <file leaf-file-name="LoginInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/interceptor/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+            <state relative-caret-position="60">
+              <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shouMessage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html">
+      <file leaf-file-name="MyWebConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/config/MyWebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="122" column="187" lean-forward="false" selection-start-line="122" selection-start-column="187" selection-end-line="122" selection-end-column="187" />
-              <folding>
-                <element signature="e#6456#6463#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml">
+      <file leaf-file-name="MessageService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4230">
-              <caret line="150" column="70" lean-forward="true" selection-start-line="150" selection-start-column="70" selection-end-line="150" selection-end-column="70" />
-              <folding>
-                <marker date="1619668203898" expanded="true" signature="1537:1705" ph="INSERT INTO message... " />
-                <marker date="1619668203898" expanded="true" signature="1847:3467" ph="SELECT DISTI... USER" />
-                <marker date="1619668203898" expanded="true" signature="2127:2746" ph="SELECT T.m_i... m_id" />
-                <marker date="1619668203898" expanded="true" signature="2442:2734" ph="SELECT me.m_... USER" />
-                <marker date="1619668203898" expanded="true" signature="3560:4042" ph="SELECT temp.... m_id" />
-                <marker date="1619668203898" expanded="true" signature="3685:3925" ph="SELECT me.m_... user" />
-                <marker date="1619668203898" expanded="true" signature="4153:4851" ph="SELECT me.m_... msg" />
-                <marker date="1619668203898" expanded="true" signature="4954:5200" ph="SELECT me.m_... user" />
-              </folding>
+            <state relative-caret-position="347">
+              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,8 +95,18 @@
       <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+            <state relative-caret-position="505">
+              <caret line="85" column="65" lean-forward="false" selection-start-line="85" selection-start-column="65" selection-end-line="85" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShouMessageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-253">
+              <caret line="30" column="69" lean-forward="false" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -144,19 +115,40 @@
       <file leaf-file-name="MessageMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/mapper/MessageMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state relative-caret-position="360">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FaMessageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java">
+      <file leaf-file-name="MessageMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="647">
+              <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+              <folding>
+                <marker date="1619773133349" expanded="true" signature="1537:1705" ph="INSERT INTO message... " />
+                <marker date="1619773133349" expanded="true" signature="1847:3483" ph="SELECT DISTI... USER" />
+                <marker date="1619773133349" expanded="true" signature="2127:2746" ph="SELECT T.m_i... m_id" />
+                <marker date="1619773133349" expanded="true" signature="2442:2734" ph="SELECT me.m_... USER" />
+                <marker date="1619773133349" expanded="true" signature="3576:4058" ph="SELECT temp.... m_id" />
+                <marker date="1619773133349" expanded="true" signature="3701:3941" ph="SELECT me.m_... user" />
+                <marker date="1619773133349" expanded="true" signature="4169:4883" ph="SELECT me.m_... msg" />
+                <marker date="1619773133349" expanded="true" signature="4986:5232" ph="SELECT me.m_... user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDateTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/bean/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/KaohexiangmuApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/mapper/MassageMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/Msg.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/User.java" />
@@ -214,12 +205,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/main/public/public.html" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/mapper/MessageMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/Message.java" />
-        <option value="$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/MessageTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/main/public/modal.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
@@ -228,14 +216,19 @@
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/ShouXiaoXiTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/main/main.html" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/EditorResult.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/main/faMessage.html" />
+        <option value="$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/MessageTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java" />
       </list>
     </option>
   </component>
@@ -279,8 +272,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1086" />
-    <option name="y" value="131" />
+    <option name="x" value="867" />
+    <option name="y" value="33" />
     <option name="width" value="1294" />
     <option name="height" value="1460" />
   </component>
@@ -329,6 +322,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,135 +347,14 @@
               <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="fengziren" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="fengziren" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="fengziren" type="462c0819:PsiDirectoryNode" />
-              <item name="modol" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="fengziren" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaohexiangmu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="fengziren" type="462c0819:PsiDirectoryNode" />
-              <item name="kaohexiangmu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -502,15 +376,19 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\JavaStudy\OneRepository\kaohexiangmu\src\main\resources\templates\main" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="top.fengziren" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\JavaStudy\OneRepository\kaohexiangmu\src\main\resources\templates\main" />
       <recent name="E:\JavaStudy\OneRepository\kaohexiangmu\src\main\resources\mapper" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="top.fengziren.modol" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JavaStudy\OneRepository\kaohexiangmu\src\main\resources\static" />
+      <recent name="E:\JavaStudy\OneRepository\kaohexiangmu\src\main\resources\templates\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -785,7 +663,9 @@
       <workItem from="1619571127701" duration="4515000" />
       <workItem from="1619576619305" duration="42000" />
       <workItem from="1619576698419" duration="21264000" />
-      <workItem from="1619657667314" duration="25900000" />
+      <workItem from="1619657667314" duration="25960000" />
+      <workItem from="1619743815805" duration="8928000" />
+      <workItem from="1619762046763" duration="14381000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1619141786553</created>
@@ -857,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619604089418</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成收件消息页面联调">
+      <created>1619691087673</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619691087673</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -893,7 +780,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192367000" />
+    <option name="totallyTimeSpent" value="215736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,7 +793,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -923,7 +809,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18521462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18839428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298887" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -977,6 +863,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -989,16 +901,22 @@
     <MESSAGE value="结合页面完成用户信息联调" />
     <MESSAGE value="收件消息查询功能完成" />
     <MESSAGE value="发消息+查看消息详情" />
-    <option name="LAST_COMMIT_MESSAGE" value="发消息+查看消息详情" />
+    <MESSAGE value="完成收件消息页面联调" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成收件消息页面联调" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>basepath+&quot;/&quot;+imgname+suffix</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>(&quot;&quot;.equals(name)</expression-string>
         <language-id>JAVA</language-id>
@@ -1007,27 +925,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/MyMaven/Repository/org/springframework/boot/spring-boot/2.3.4.RELEASE/spring-boot-2.3.4.RELEASE.jar!/org/springframework/boot/context/logging/LoggingApplicationListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/MyMaven/Repository/junit/junit/4.13/junit-4.13.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/MyMaven/Repository/junit/junit/4.13/junit-4.13.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/MyMaven/Repository/junit/junit/4.13/junit-4.13.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1077,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/config/MyWebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdn.jsdelivr.net_npm_jquery@1.12.4_dist_jquery.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1103,13 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1133,14 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1198,35 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/kaohe.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/kaohe.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/MessageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="94" column="54" lean-forward="false" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,19 +1093,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/MsgService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1277,39 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MsgServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="78" column="27" lean-forward="true" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/mapper/MessageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,23 +1124,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="63" lean-forward="false" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="330">
           <caret line="20" column="157" lean-forward="false" selection-start-line="20" selection-start-column="157" selection-end-line="20" selection-end-column="157" />
           <folding />
         </state>
@@ -1341,67 +1137,193 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/public/public.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4230">
-          <caret line="150" column="70" lean-forward="true" selection-start-line="150" selection-start-column="70" selection-end-line="150" selection-end-column="70" />
-          <folding>
-            <marker date="1619668203898" expanded="true" signature="1537:1705" ph="INSERT INTO message... " />
-            <marker date="1619668203898" expanded="true" signature="1847:3467" ph="SELECT DISTI... USER" />
-            <marker date="1619668203898" expanded="true" signature="2127:2746" ph="SELECT T.m_i... m_id" />
-            <marker date="1619668203898" expanded="true" signature="2442:2734" ph="SELECT me.m_... USER" />
-            <marker date="1619668203898" expanded="true" signature="3560:4042" ph="SELECT temp.... m_id" />
-            <marker date="1619668203898" expanded="true" signature="3685:3925" ph="SELECT me.m_... user" />
-            <marker date="1619668203898" expanded="true" signature="4153:4851" ph="SELECT me.m_... msg" />
-            <marker date="1619668203898" expanded="true" signature="4954:5200" ph="SELECT me.m_... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="122" column="187" lean-forward="false" selection-start-line="122" selection-start-column="187" selection-end-line="122" selection-end-column="187" />
-          <folding>
-            <element signature="e#6456#6463#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="690">
+          <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1377">
-          <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        <state relative-caret-position="330">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/shouMessage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="146" column="38" lean-forward="true" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+          <folding>
+            <element signature="e#754#761#1" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#5278#5285#1" expanded="false" />
+            <element signature="e#6437#6444#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MsgServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/EditorResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="80" column="20" lean-forward="false" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/main/faMessage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="269" column="0" lean-forward="true" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+        <state relative-caret-position="497">
+          <caret line="196" column="45" lean-forward="true" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
           <folding>
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1619691051214" expanded="true" signature="10053:10064" ph="..." />
+            <element signature="e#771#778#1" expanded="false" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#2342#2349#1" expanded="false" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#7348#7355#1" expanded="false" />
+            <element signature="e#8501#8508#1" expanded="false" />
+            <marker date="1619768410930" expanded="true" signature="12072:12083" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/top/fengziren/kaohexiangmu/MessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="100" column="2" lean-forward="false" selection-start-line="100" selection-start-column="2" selection-end-line="104" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/modol/MessageSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/tools/MyDateTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="85" column="65" lean-forward="false" selection-start-line="85" selection-start-column="65" selection-end-line="85" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/mapper/MessageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding>
+            <marker date="1619773133349" expanded="true" signature="1537:1705" ph="INSERT INTO message... " />
+            <marker date="1619773133349" expanded="true" signature="1847:3483" ph="SELECT DISTI... USER" />
+            <marker date="1619773133349" expanded="true" signature="2127:2746" ph="SELECT T.m_i... m_id" />
+            <marker date="1619773133349" expanded="true" signature="2442:2734" ph="SELECT me.m_... USER" />
+            <marker date="1619773133349" expanded="true" signature="3576:4058" ph="SELECT temp.... m_id" />
+            <marker date="1619773133349" expanded="true" signature="3701:3941" ph="SELECT me.m_... user" />
+            <marker date="1619773133349" expanded="true" signature="4169:4883" ph="SELECT me.m_... msg" />
+            <marker date="1619773133349" expanded="true" signature="4986:5232" ph="SELECT me.m_... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/ShouMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="30" column="69" lean-forward="false" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/9e21db73-9011-440b-88d8-ac260a1db5d4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/controller/FaMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="103" column="22" lean-forward="false" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/top/fengziren/config/MyWebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -22,7 +22,7 @@
             <div class="modal-body">
                 <div>
                     <label th:class="text-input-context-menu">标题：
-                        <input type="text" th:class="form-search" name="title">
+                        <input type="text" id="faTitle" th:class="form-search" name="title" maxlength="40">
                     </label>
 
                 </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="modal-footer">
                 <button type="reset" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                <button type="submit" class="btn btn-primary" id="famessage">发送</button>
+                <button type="submit" onclick=" return famessageFun()"  class="btn btn-primary" id="famessage">发送</button>
             </div>
             </form>
         </div>
@@ -118,7 +118,7 @@
                         <button type="button" id="btnModal" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
                             发送消息
                         </button>
-                        <button type="button" id="delBtn" class="btn btn-secondary" onclick="return delMsgs()">
+                        <button type="button" id="delBtn" class="btn btn-secondary" onclick="delMsgs()">
                             批量删除
                         </button>
                     </tr>
@@ -137,7 +137,7 @@
                     <form  id="delform" method="post" th:action="@{/main/famsg/delmsg}">
                     <tbody>
                     <tr th:each="message , messageStat:${pageInfo.getList()}">
-                        <th><input  type="checkbox" name="midList" th:value="${message.mId}"></th>
+                        <th><input onclick="insCheckbox(checked)" type="checkbox" name="midList" th:value="${message.mId}" ></th>
                         <th th:text="${message.title}"></th>
                         <td th:text="${#strings.abbreviate(message.content,10)}"></td>
                         <td th:text="${message.fName}"></td>
@@ -145,7 +145,7 @@
                         <td th:text="${#dates.format(message.mTime,'yyyy-MM-dd HH:mm')}"></td>
                         <td >
                             <button th:onclick="'javascript: selmsg('+${message.mId}+')'"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#MessageParticulars">查看</button>
-                            <button type="submit" class="btn btn-danger">删除</button>
+                            <button type="button"th:onclick="'javascript: delmsg('+${message.mId}+')'"  class="btn btn-danger">删除</button>
                         </td>
                     </tr>
                     </tbody>
@@ -190,22 +190,80 @@
     // 或者 const editor = new E( document.getElementById('div1') )
     editor1.config.menus = ['image']
     //富文本编辑器图片上传配置
-    // editor.config.uploadImgServer = '/upload-img'
-    // editor.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
-    // editor.config.uploadImgMaxLength = 3
-    editor1.create();
+    editor1.config.uploadImgServer = '/main/famsg/upload-img';
+    editor1.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+    editor1.config.uploadImgMaxLength = 1;
+    editor1.config.showLinkImg = false ;
+    editor1.config.uploadFileName =  'upImg';
+    editor1.config.uploadImgHooks = {
+        // 上传图片之前
+        before: function(xhr) {
+            console.log(xhr)
 
+            // 可阻止图片上传
+            // return {
+            //     prevent: true,
+            //     msg: '需要提示给用户的错误信息'
+            // }
+        },
+        // 图片上传并返回了结果，图片插入已成功
+        success: function(xhr) {
+            console.log('success', xhr)
+        },
+        // 图片上传并返回了结果，但图片插入时出错了
+        fail: function(xhr, editor, resData) {
+            console.log('fail', resData)
+        },
+        // 上传图片出错，一般为 http 请求的错误
+        error: function(xhr, editor, resData) {
+            console.log('error', xhr, resData)
+        },
+        // 上传图片超时
+        timeout: function(xhr) {
+            console.log('timeout')
+        },
+        // 图片上传并返回了结果，想要自己把图片插入到编辑器中
+        // 例如服务器端返回的不是 { errno: 0, data: [...] } 这种格式，可使用 customInsert
+        customInsert: function(insertImgFn, result) {
+            // result 即服务端返回的接口
+            console.log('customInsert', result)
+
+            // insertImgFn 可把图片插入到编辑器，传入图片 src ，执行函数即可
+            insertImgFn(result.data[0])
+        }
+    }
+    editor1.create();
     const editor2 = new E('#divCont2')
     // 或者 const editor = new E( document.getElementById('div1') )
     editor2.config.menus = []
     editor2.create();
     // editor2.txt.html('<p>用 JS 设置的内容</p>')   重新设置编辑器内容
+    editor2.config.showLinkImg = false
     editor2.disable();
+    function famessageFun() {
 
-    $('#famessage').click(function () {
-        var datatxt = editor1.txt.text();
-        $('#textmsg').val(datatxt);
-    })
+            var title = $("#faTitle").val();
+            var fauser = $("[name='sidList']:checked").length;
+            var datatxt = editor1.txt.text();
+            var strmsg = "";
+            if(title == null || "" == title){
+                strmsg += "标题不能为空! "
+            }
+            if(fauser == 0){
+                strmsg += "请选择要发送到的用户！ "
+            }
+            if(datatxt == null || datatxt == ""){
+                strmsg += "消息内容不能为空！"
+            }
+            if (title != null && title != "" && fauser > 0 && datatxt != null && datatxt != "") {
+                $('#textmsg').val(datatxt);
+                return true;
+            } else {
+                alert(strmsg);
+                return false;
+            }
+
+    }
 
     $('#btnModal').click(function () {
         $.ajax({
@@ -258,7 +316,7 @@
     }
 
     function delMsgs() {
-        console.log($("[name='midList']:checked").length)
+
 
        if($("[name='midList']:checked").length>0){
            if(confirm("请确认是否删除！")){
@@ -269,7 +327,25 @@
        }
 
     }
+    function delmsg(mid) {
+        if (confirm("请确认是否删除！")) {
+            $.ajax({
+                type: "post",
+                url: "/main/famsg/delmsgAjax",
+                data: {midList: mid},
+                success: function (result) {
+                    window.location.reload();
+                }
+            })
+        }
+    }
 
+    function insCheckbox(e) {
+    if(e == false){
+        $("#overallCheck").prop('checked',false);
+    }
+
+}
 </script>
 </body>
 </html>

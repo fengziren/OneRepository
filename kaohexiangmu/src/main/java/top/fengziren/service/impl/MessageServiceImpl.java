@@ -11,7 +11,9 @@ import top.fengziren.modol.MessageSelect;
 import top.fengziren.modol.Msg;
 import top.fengziren.service.MessageService;
 import top.fengziren.service.MsgService;
+import top.fengziren.tools.MyDateTools;
 
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,8 +33,14 @@ public class MessageServiceImpl implements MessageService{
     public PageInfo<Message> getMessageByMessageSelect(int pageNum,int pageSize,MessageSelect messageSelect) {
 
         if(null == messageSelect.getStartTime() || "null".equals(messageSelect.getStartTime()) || "".equals(messageSelect.getStartTime())){
-            messageSelect.setStartTime(null);
-            messageSelect.setEndTime(null);
+            messageSelect.setStartDateTime(null);
+            messageSelect.setEndDateTime(null);
+        }else if(null == messageSelect.getEndTime() || "null".equals(messageSelect.getEndTime()) || "".equals(messageSelect.getEndTime())){
+            messageSelect.setStartDateTime(null);
+            messageSelect.setEndDateTime(null);
+        }else{
+            messageSelect.setStartDateTime(MyDateTools.getCustomDate(messageSelect.getStartTime(),"start"));
+            messageSelect.setEndDateTime(MyDateTools.getCustomDate(messageSelect.getEndTime(),"end"));
         }
 
         PageHelper.startPage(pageNum,pageSize);
@@ -65,8 +73,14 @@ public class MessageServiceImpl implements MessageService{
     @Override
     public PageInfo<Message> getMessageByMessageSelectShou(int pageNum,int pageSize,MessageSelect messageSelect) {
         if(null == messageSelect.getStartTime() || "null".equals(messageSelect.getStartTime()) || "".equals(messageSelect.getStartTime())){
-            messageSelect.setStartTime(null);
-            messageSelect.setEndTime(null);
+            messageSelect.setStartDateTime(null);
+            messageSelect.setEndDateTime(null);
+        }else if(null == messageSelect.getEndTime() || "null".equals(messageSelect.getEndTime()) || "".equals(messageSelect.getEndTime())){
+            messageSelect.setStartDateTime(null);
+            messageSelect.setEndDateTime(null);
+        }else{
+            messageSelect.setStartDateTime(MyDateTools.getCustomDate(messageSelect.getStartTime(),"start"));
+            messageSelect.setEndDateTime(MyDateTools.getCustomDate(messageSelect.getEndTime(),"end"));
         }
         PageHelper.startPage(pageNum,pageSize);
         List<Message> messageList = messageMapper.getMessageByMessageSelectShou(messageSelect);

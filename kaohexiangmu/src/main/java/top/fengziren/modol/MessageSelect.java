@@ -17,4 +17,6 @@ public class MessageSelect {
     private Integer status;
     private String startTime;
     private String endTime;
+    private Date startDateTime;
+    private Date endDateTime;
 }

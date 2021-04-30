@@ -7,8 +7,7 @@
 <body>
 
 
-
- <!--Modal2-->
+<!--Modal2-->
 <div style=" opacity: 1;" class="modal fade"
      id="MessageParticulars" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -19,25 +18,25 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-                <div class="modal-body">
-                    <div>
-                       <h3 id="selTitle" style="margin: 0px auto;text-align: center">标题</h3>
-
-                    </div>
-                    <div class="row">
-                        <div id="selFaUser" style="margin: 0px auto">推送人：</div>
-                        <div id="mTime" style="margin: 0px auto">通知时间：</div>
-                    </div>
-                    <div id="divCont2">
-
-                    </div>
-
+            <div class="modal-body">
+                <div>
+                    <h3 id="selTitle" style="margin: 0px auto;text-align: center">标题</h3>
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    <!--<button type="submit" class="btn btn-primary" id="famessage">发送</button>-->
+                <div class="row">
+                    <div id="selFaUser" style="margin: 0px auto">推送人：</div>
+                    <div id="mTime" style="margin: 0px auto">通知时间：</div>
                 </div>
+                <div id="divCont2">
+
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <!--<button type="submit" class="btn btn-primary" id="famessage">发送</button>-->
+            </div>
         </div>
     </div>
 </div>
@@ -74,40 +73,39 @@
 
 
                 <table class="table table-striped">
-                    <form method="post" th:action="@{/main/shoumsg/delmsg}">
+
                     <thead>
                     <tr>
 
-                        <button type="submit" id="delBtn" class="btn btn-secondary" onclick="return delMsgs()">
+                        <button type="button" id="delBtn" class="btn btn-secondary" onclick="delMsgs()">
                             批量删除
                         </button>
                     </tr>
                     <tr>
                         <th scope="col">
-                            <input type="checkbox" onclick="swapCheck()">
+                            <input id="overallCheck" type="checkbox" onclick="swapCheck()">
                         </th>
                         <th scope="col">标题</th>
                         <th scope="col">内容</th>
-                        <!--<th scope="col">发件用户</th>-->
                         <th scope="col">阅读状态</th>
                         <th scope="col">通知时间</th>
                         <th scope="col">操作</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr th:each="message , messageStat:${pageInfo.getList()}">
-                        <th><input type="checkbox" name="midList" th:value="${message.mId}"></th>
-                        <th th:text="${message.title}"></th>
-                        <td th:text="${#strings.abbreviate(message.content,10)}"></td>
-                        <!--<td th:text="${message.fName}"></td>-->
-                        <td th:text="${message.status}"></td>
-                        <td th:text="${#dates.format(message.mTime,'yyyy-MM-dd HH:mm')}"></td>
-                        <td >
-                            <button th:onclick="'javascript: shoumsg('+${message.mId}+')'"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#MessageParticulars">查看</button>
-                            <button type="submit" class="btn btn-danger">删除</button>
-                        </td>
-                    </tr>
-                    </tbody>
+                    <form  id="delform" method="post" th:action="@{/main/shoumsg/delmsg}">
+                        <tbody>
+                        <tr th:each="message , messageStat:${pageInfo.getList()}">
+                            <th><input onclick="insCheckbox(checked)" type="checkbox" name="midList" th:value="${message.mId}" ></th>
+                            <th th:text="${message.title}"></th>
+                            <td th:text="${#strings.abbreviate(message.content,10)}"></td>
+                            <td th:text="${message.status}"></td>
+                            <td th:text="${#dates.format(message.mTime,'yyyy-MM-dd HH:mm')}"></td>
+                            <td >
+                                <button th:onclick="'javascript: selmsg('+${message.mId}+')'"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#MessageParticulars">查看</button>
+                                <button type="button"th:onclick="'javascript: delmsg('+${message.mId}+')'"  class="btn btn-danger">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
                     </form>
                 </table>
             </div>
@@ -119,8 +117,8 @@
                         </a>
                     </li>
                     <li class="page-item" th:if="${pageInfo.getPages()!=0}" th:each="pageNum:${#numbers.sequence(1,pageInfo.getPages())}">
-                        <a th:href="@{/main/famsg(pageNum=${pageNum},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" th:text="${pageNum}" th:if="${pageNum ne pageInfo.getPageNum()}"></a>
-                        <a th:href="@{/main/famsg(pageNum=${pageNum},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" th:text="${pageNum}" th:if="${pageNum eq pageInfo.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+                        <a th:href="@{/main/shoumsg(pageNum=${pageNum},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" th:text="${pageNum}" th:if="${pageNum ne pageInfo.getPageNum()}"></a>
+                        <a th:href="@{/main/shoumsg(pageNum=${pageNum},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}" th:text="${pageNum}" th:if="${pageNum eq pageInfo.getPageNum()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
                     </li>
                     <li class="page-item">
                         <a class="page-link" aria-label="Next" th:href="@{/main/shoumsg(pageNum=${pageInfo.getPages()},title=${session.arg.title},status=${session.arg.status},startTime=${session.arg.startTime},endTime=${session.arg.endTime})}">
@@ -146,16 +144,19 @@
 <script type="text/javascript">
     const E = window.wangEditor
 
-
     const editor2 = new E('#divCont2')
     // 或者 const editor = new E( document.getElementById('div1') )
     editor2.config.menus = []
     editor2.create();
+    editor2.config.showLinkImg = false
     // editor2.txt.html('<p>用 JS 设置的内容</p>')   重新设置编辑器内容
     editor2.disable();
 
 
-    function shoumsg(mid) {
+
+
+
+    function selmsg(mid) {
         $.ajax({
             type:"POST",
             url:"/main/shoumsg/selParticulars",
@@ -167,12 +168,10 @@
                 var dateTime = new Date(result.mtime);
                 $("#mTime").text("通知时间："+dateTime.toLocaleDateString()+dateTime.toLocaleTimeString());
                 editor2.txt.text('<p>'+result.content+'</p>')
+
             }
         })
     }
-    $('#MessageParticulars').on('hidden.bs.modal', function (event) {
-        window.location.reload();
-    })
     //checkbox 全选/取消全选
     var isCheckAll = false;
     function swapCheck() {
@@ -190,25 +189,39 @@
     }
 
     function delMsgs() {
-        var count = 0;
-        var tag = 0;
-        $("input[type='checkbox']").each(function() {
-            if(this.checked == true){
-                count++;
-            }else {
-                count++;
-                tag++;
+
+
+        if($("[name='midList']:checked").length>0){
+            if(confirm("请确认是否删除！")){
+                $("#delform").submit();
             }
-        });
-        if(tag != 0 && count >= tag){
-            if(confirm("确定要删除吗？")==false){
-                return false;
-            }
-        }else {
-            alert("请选择要删除的消息");
-            return false;
+        }else{
+            alert("请选择需要删除的消息");
+        }
+
+    }
+    function delmsg(mid) {
+        if (confirm("请确认是否删除！")) {
+            $.ajax({
+                type: "post",
+                url: "/main/shoumsg/delmsgAjax",
+                data: {midList: mid},
+                success: function (result) {
+                    window.location.reload();
+                }
+            })
         }
     }
+
+    function insCheckbox(e) {
+        if(e == false){
+            $("#overallCheck").prop('checked',false);
+        }
+
+    }
+    $("#MessageParticulars").on('hidden.bs.modal', function (){
+      window.location.reload();
+    })
 </script>
 </body>
 </html>
