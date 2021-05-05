@@ -49,6 +49,7 @@ public class FaMessageController {
         User user = (User) session.getAttribute("user");
 
         messageSend.setFid(user.getUId());
+        System.out.println(messageSend);
         String msg = msgService.saveMessage(messageSend);
         System.out.println(msg);
         return "redirect:/main/famsg";
@@ -100,7 +101,8 @@ public class FaMessageController {
         EditorResult er = new EditorResult();
         er.setErrno(1);
         //获取文件地址
-        String basepath = "E:\\JavaStudy\\OneRepository\\kaohexiangmu\\src\\main\\resources\\static\\img";
+        String basepath = System.getProperty("user.dir");
+        basepath += "\\static\\img";
         String imgname = UUID.randomUUID().toString();
         //文件后缀名
         String suffix = upImg.getOriginalFilename().substring(upImg.getOriginalFilename().lastIndexOf("."));
@@ -109,7 +111,7 @@ public class FaMessageController {
             upImg.transferTo(new File(basepath+"/"+imgname+suffix));
             //上传成功修改errno错误状态,返回路径
             er.setErrno(0);
-            er.setData(new String[]{"/img/"+imgname+suffix});
+            er.setData(new String[]{"/main/famsg/img/"+imgname+suffix});
         } catch (IllegalStateException e) {
             e.printStackTrace();
         } catch (IOException e) {

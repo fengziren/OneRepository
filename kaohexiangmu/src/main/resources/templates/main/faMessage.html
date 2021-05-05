@@ -244,7 +244,7 @@
 
             var title = $("#faTitle").val();
             var fauser = $("[name='sidList']:checked").length;
-            var datatxt = editor1.txt.text();
+            var datatxt = editor1.txt.html();
             var strmsg = "";
             if(title == null || "" == title){
                 strmsg += "标题不能为空! "
